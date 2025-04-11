@@ -1,0 +1,24 @@
+{
+  "name": "LoftProfiles",
+  "description": "Creates a loft feature by connecting multiple profiles.",
+  "parameters": {
+    "profile_indices": {
+      "type": "array",
+      "description": "Indices of the profiles to loft.",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "operation": {
+      "type": "string",
+      "description": "The operation type (e.g., 'new', 'join', 'cut', 'intersect').",
+      "default": "new"
+    },
+    "is_closed": {
+      "type": "boolean",
+      "description": "Whether the loft should be closed (connect the last profile to the first).",
+      "default": false
+    }
+  },
+  "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-6D381FCD-22AB-4F08-B4BB-5D3A130189AC"
+}

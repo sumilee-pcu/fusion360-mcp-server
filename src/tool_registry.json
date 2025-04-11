@@ -1,0 +1,251 @@
+[
+  {
+    "name": "CreateSketch",
+    "description": "Creates a new sketch on a specified plane.",
+    "parameters": {
+      "plane": {
+        "type": "string",
+        "description": "The plane to create the sketch on (e.g., 'xy', 'yz', 'xz')."
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-2533FC11-8BD3-4B3A-B52C-F8B470DC4065"
+  },
+  {
+    "name": "DrawRectangle",
+    "description": "Draws a rectangle in the active sketch.",
+    "parameters": {
+      "width": {
+        "type": "number",
+        "description": "Width of the rectangle in mm."
+      },
+      "depth": {
+        "type": "number",
+        "description": "Depth of the rectangle in mm."
+      },
+      "origin_x": {
+        "type": "number",
+        "description": "X coordinate of the origin point.",
+        "default": 0
+      },
+      "origin_y": {
+        "type": "number",
+        "description": "Y coordinate of the origin point.",
+        "default": 0
+      },
+      "origin_z": {
+        "type": "number",
+        "description": "Z coordinate of the origin point.",
+        "default": 0
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-2533FC11-8BD3-4B3A-B52C-F8B470DC4065"
+  },
+  {
+    "name": "DrawCircle",
+    "description": "Draws a circle in the active sketch.",
+    "parameters": {
+      "center_x": {
+        "type": "number",
+        "description": "X coordinate of the center point.",
+        "default": 0
+      },
+      "center_y": {
+        "type": "number",
+        "description": "Y coordinate of the center point.",
+        "default": 0
+      },
+      "center_z": {
+        "type": "number",
+        "description": "Z coordinate of the center point.",
+        "default": 0
+      },
+      "radius": {
+        "type": "number",
+        "description": "Radius of the circle in mm."
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-2533FC11-8BD3-4B3A-B52C-F8B470DC4065"
+  },
+  {
+    "name": "Extrude",
+    "description": "Extrudes a profile into a 3D body.",
+    "parameters": {
+      "profile_index": {
+        "type": "integer",
+        "description": "Index of the profile to extrude.",
+        "default": 0
+      },
+      "height": {
+        "type": "number",
+        "description": "Height of the extrusion in mm."
+      },
+      "operation": {
+        "type": "string",
+        "description": "The operation type (e.g., 'new', 'join', 'cut', 'intersect').",
+        "default": "new"
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-6D381FCD-22AB-4F08-B4BB-5D3A130189AC"
+  },
+  {
+    "name": "Revolve",
+    "description": "Revolves a profile around an axis.",
+    "parameters": {
+      "profile_index": {
+        "type": "integer",
+        "description": "Index of the profile to revolve.",
+        "default": 0
+      },
+      "axis_origin_x": {
+        "type": "number",
+        "description": "X coordinate of the axis origin point."
+      },
+      "axis_origin_y": {
+        "type": "number",
+        "description": "Y coordinate of the axis origin point."
+      },
+      "axis_origin_z": {
+        "type": "number",
+        "description": "Z coordinate of the axis origin point."
+      },
+      "axis_direction_x": {
+        "type": "number",
+        "description": "X component of the axis direction vector."
+      },
+      "axis_direction_y": {
+        "type": "number",
+        "description": "Y component of the axis direction vector."
+      },
+      "axis_direction_z": {
+        "type": "number",
+        "description": "Z component of the axis direction vector."
+      },
+      "angle": {
+        "type": "number",
+        "description": "Angle of revolution in degrees.",
+        "default": 360
+      },
+      "operation": {
+        "type": "string",
+        "description": "The operation type (e.g., 'new', 'join', 'cut', 'intersect').",
+        "default": "new"
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-6D381FCD-22AB-4F08-B4BB-5D3A130189AC"
+  },
+  {
+    "name": "Fillet",
+    "description": "Adds a fillet to selected edges.",
+    "parameters": {
+      "body_index": {
+        "type": "integer",
+        "description": "Index of the body containing the edges to fillet.",
+        "default": 0
+      },
+      "radius": {
+        "type": "number",
+        "description": "Radius of the fillet in mm."
+      },
+      "edge_indices": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "Indices of the edges to fillet. If empty, all edges will be filleted.",
+        "default": []
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-22D93F54-B84E-4C0B-97D3-CAEA7D2BAFFE"
+  },
+  {
+    "name": "Chamfer",
+    "description": "Adds a chamfer to selected edges.",
+    "parameters": {
+      "body_index": {
+        "type": "integer",
+        "description": "Index of the body containing the edges to chamfer.",
+        "default": 0
+      },
+      "distance": {
+        "type": "number",
+        "description": "Distance of the chamfer in mm."
+      },
+      "edge_indices": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "Indices of the edges to chamfer. If empty, all edges will be chamfered.",
+        "default": []
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-22D93F54-B84E-4C0B-97D3-CAEA7D2BAFFE"
+  },
+  {
+    "name": "Shell",
+    "description": "Hollows out a solid body with a specified wall thickness.",
+    "parameters": {
+      "body_index": {
+        "type": "integer",
+        "description": "Index of the body to shell.",
+        "default": 0
+      },
+      "thickness": {
+        "type": "number",
+        "description": "Thickness of the shell in mm."
+      },
+      "face_indices": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "Indices of the faces to remove. If empty, no faces will be removed.",
+        "default": []
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-22D93F54-B84E-4C0B-97D3-CAEA7D2BAFFE"
+  },
+  {
+    "name": "Combine",
+    "description": "Combines two bodies using boolean operations.",
+    "parameters": {
+      "target_body_index": {
+        "type": "integer",
+        "description": "Index of the target body.",
+        "default": 0
+      },
+      "tool_body_index": {
+        "type": "integer",
+        "description": "Index of the tool body.",
+        "default": 1
+      },
+      "operation": {
+        "type": "string",
+        "description": "The operation type ('join', 'cut', 'intersect').",
+        "default": "join"
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-22D93F54-B84E-4C0B-97D3-CAEA7D2BAFFE"
+  },
+  {
+    "name": "ExportBody",
+    "description": "Exports a body to a file.",
+    "parameters": {
+      "body_index": {
+        "type": "integer",
+        "description": "Index of the body to export.",
+        "default": 0
+      },
+      "format": {
+        "type": "string",
+        "description": "The export format ('stl', 'obj', 'step', 'iges', 'sat').",
+        "default": "stl"
+      },
+      "filename": {
+        "type": "string",
+        "description": "The filename to export to."
+      }
+    },
+    "docs": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-76272551-3275-46C4-AE4D-10D58B408C20"
+  }
+]

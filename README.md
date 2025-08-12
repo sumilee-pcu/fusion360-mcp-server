@@ -21,7 +21,7 @@ This project allows Cline to:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/fusion360-mcp-server.git
+   git clone https://github.com/sumilee-pcu/fusion360-mcp-server.git
    cd fusion360-mcp-server
    ```
 
@@ -249,3 +249,4 @@ def run(context):
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
